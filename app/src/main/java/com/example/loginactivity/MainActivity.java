@@ -42,12 +42,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        sharedpreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);
-        if (sharedpreferences.getBoolean("logged", false)) {
-            Intent welcomeintent;
-            welcomeintent = new Intent(com.example.loginactivity.MainActivity.this, com.example.loginactivity.WelcomeTeacher.class);
-            startActivity(welcomeintent);
-        }
         username = (EditText) findViewById(R.id.edittext_username);
         password = (EditText) findViewById(R.id.edittext_password);
         login = (Button) findViewById(R.id.button_login);
@@ -107,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
                                     SharedPreferences.Editor editor = sharedpreferences.edit();
                                     editor.putBoolean("logged", true);
                                     editor.putString("username",resp.getData().getTeachername());
+                                    editor.putInt("id",resp.getData().getTeacherid());
                                     editor.apply();
 
                                 } else {

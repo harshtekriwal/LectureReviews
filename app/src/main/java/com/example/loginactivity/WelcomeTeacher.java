@@ -12,19 +12,28 @@ import android.widget.EditText;
 
 public class WelcomeTeacher extends AppCompatActivity {
     EditText t;
-    Button b;
+    Button logout;
+    Button generateotpactivity;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_teacher);
-        b=(Button)findViewById(R.id.logout_button);
+        generateotpactivity=(Button)findViewById((R.id.take_review));
+        logout=(Button)findViewById(R.id.logout_button);
         t=(EditText)findViewById(R.id.teacher_welcome);
         sharedPreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);
         String enroll=sharedPreferences.getString("username","");
         System.out.println(enroll);
         t.setText("                       Welcome   "+enroll);
-        b.setOnClickListener(new View.OnClickListener() {
+        generateotpactivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent get_lecture_review_intent = new Intent(com.example.loginactivity.WelcomeTeacher.this,com.example.loginactivity.GenerateOTP.class);
+                startActivity(get_lecture_review_intent);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SharedPreferences sharedpreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);

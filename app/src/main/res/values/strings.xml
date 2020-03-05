@@ -12,4 +12,9 @@
     <string name="takereview">Generate Lecture Code</string>
     <string name="checkoutratings">Checkout Ratings</string>
     <string name="logout">logout</string>
+    <string name="batch">Batch</string>
+    <string name="lecturename">LectureName</string>
+    <string name="year">Year</string>
+    <string name="semester">Semester</string>
+    <string name="generate_code">Generate code</string>
 </resources>
