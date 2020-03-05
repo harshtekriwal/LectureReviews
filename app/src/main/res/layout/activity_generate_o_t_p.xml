@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".GenerateOTP">
+
+    <EditText
+        android:id="@+id/edit_text_lecturecode"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="                                  Generate Lecture Code" />
+
+    <EditText
+        android:id="@+id/edit_text_lecturename"
+        android:layout_width="163dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="120dp"
+        android:inputType="text"
+        android:hint="@string/lecturename"/>
+
+
+    <EditText
+        android:id="@+id/edit_text_batch"
+        android:inputType="text"
+        android:layout_width="161dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/batch" />
+    <EditText
+        android:id="@+id/edit_text_Semester"
+        android:inputType="numberDecimal"
+        android:layout_width="161dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/semester" />
+    <Button
+        android:id="@+id/button_OTP"
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/generate_code" />
+
+    <TextView
+        android:id="@+id/text_view_otp"
+        android:layout_width="200dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="50dp"
+        android:text="" />
+
+</LinearLayout>
