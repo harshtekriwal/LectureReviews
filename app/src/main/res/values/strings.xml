@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">loginactivity</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="not_registered">not_registered</string>
+    <string name="register">register</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="log">Login</string>
+    <string name="TeacherLogin">Teacher Login</string>
+    <string name="StudentLogin">Student Login</string>
+    <string name="takereview">Generate Lecture Code</string>
+    <string name="checkoutratings">Checkout Ratings</string>
+    <string name="logout">logout</string>
+</resources>
