@@ -22,6 +22,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 Intent teachermenu ;
                 teachermenu=new Intent(com.example.loginactivity.MainMenuActivity.this,com.example.loginactivity.MainActivity.class);
                 startActivity(teachermenu);
+
             }
         });
     }
