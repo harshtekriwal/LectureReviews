@@ -6,41 +6,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".MainActivity">
+    tools:context=".StudentLoginActivity">
 
     <EditText
-        android:id="@+id/edittext_username"
+        android:id="@+id/edittext_enrollment_student"
         android:layout_width="163dp"
         android:layout_height="40dp"
         android:layout_marginTop="160dp"
         android:inputType="numberDecimal"
-        android:hint="@string/username" />
+        android:hint="@string/enrollment" />
 
     <EditText
-        android:id="@+id/edittext_password"
+        android:id="@+id/edittext_password_student"
         android:inputType="textPassword"
         android:layout_width="161dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/password" />
+        android:hint="@string/pass" />
 
     <Button
-        android:id="@+id/button_login"
+        android:id="@+id/button_login_student"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:text="@string/login" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:text="@string/not_registered" />
-
-    <TextView
-        android:id="@+id/textview_register"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:paddingLeft="10dp"
-        android:text="@string/register"
-        android:textStyle="bold" />
+        android:text="@string/login_student"/>
 </LinearLayout>

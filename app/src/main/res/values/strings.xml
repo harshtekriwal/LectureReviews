@@ -17,4 +17,10 @@
     <string name="year">Year</string>
     <string name="semester">Semester</string>
     <string name="generate_code">Generate code</string>
+    <string name="enrollment">Enrollment</string>
+    <string name="pass">Password</string>
+    <string name="LoginButton"><![CDATA[Login /> </LinearLayout>]]></string>
+    <string name="login_student">Login</string>
+    <string name="rate_lecture">Rate Lecture</string>
+    <string name="logout_2">Logout</string>
 </resources>

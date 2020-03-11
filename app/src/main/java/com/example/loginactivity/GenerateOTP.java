@@ -2,9 +2,13 @@ package com.example.loginactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -79,9 +83,21 @@ public class GenerateOTP extends AppCompatActivity {
                     public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                         String json = response.body().string();
                         Gson g = new Gson();
-                        final Integer code=g.fromJson(json, Integer.class);
-                        System.out.println(code);
-                        otp.setText(Integer.toString(code));
+                        final Integer code = g.fromJson(json, Integer.class);
+                        new Handler(Looper.getMainLooper()).post(new Runnable() {
+                            @Override
+                            public void run() {
+                                AlertDialog.Builder alert = new AlertDialog.Builder(GenerateOTP.this);
+                                alert.setTitle("Lecture Code");
+                                alert.setMessage(Integer.toString(code));
+                                alert.setCancelable(false);
+                                alert.setPositiveButton("OK", null);
+                                AlertDialog dialog=alert.create();
+                                dialog.show();
+                            }
+
+
+                        });
                     }
 
                     @Override
