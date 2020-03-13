@@ -14,13 +14,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.google.gson.Gson;
-
 import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
-
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -95,11 +91,8 @@ public class GenerateOTP extends AppCompatActivity {
                                 AlertDialog dialog=alert.create();
                                 dialog.show();
                             }
-
-
                         });
                     }
-
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
                         e.printStackTrace();
