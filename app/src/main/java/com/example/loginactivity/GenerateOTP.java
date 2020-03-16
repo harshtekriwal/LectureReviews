@@ -26,6 +26,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class GenerateOTP extends AppCompatActivity {
+
     TextView otp;
     EditText lecture_name;
     EditText batch;
@@ -65,7 +66,7 @@ public class GenerateOTP extends AppCompatActivity {
                 int teacherid = sharedPreferences.getInt("id", 0);
                 final int sem = Integer.parseInt(semester.getText().toString());
                 MediaType mediaType = MediaType.parse("application/json");
-                RequestBody body = RequestBody.create(mediaType, "{\t\t\n\t\t\"lecturename\":\"" + lec_name + "\",\n\t\t\"teachername\":\"" + teachername + "\",\n\t\t\"batch\":\"" + batch_b + "\",\n\t\t\"semester\":" + sem + ",\n        \"teacherid\": " + teacherid + "\n}\t");
+                RequestBody body = RequestBody.create("{\t\t\n\t\t\"lecturename\":\"" + lec_name + "\",\n\t\t\"teachername\":\"" + teachername + "\",\n\t\t\"batch\":\"" + batch_b + "\",\n\t\t\"semester\":" + sem + ",\n        \"teacherid\": " + teacherid + "\n}\t",mediaType);
                 Request request = new Request.Builder()
                         .url("http://10.0.2.2:8080/DetailsVerifiation/webapi/generatecode/seecode")
                         .post(body)

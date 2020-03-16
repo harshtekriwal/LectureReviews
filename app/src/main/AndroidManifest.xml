@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LectureFeedback"></activity>
+        <activity android:name=".OverallRatingActivity"></activity>
+        <activity android:name=".CheckoutRatingActivity" />
+        <activity android:name=".LectureFeedback" />
         <activity android:name=".WelcomeStudent" />
         <activity android:name=".StudentLoginActivity" />
         <activity android:name=".GenerateOTP" />

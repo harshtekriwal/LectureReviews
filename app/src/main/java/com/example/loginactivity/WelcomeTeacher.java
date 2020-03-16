@@ -13,12 +13,14 @@ import android.widget.EditText;
 public class WelcomeTeacher extends AppCompatActivity {
     EditText t;
     Button logout;
+    Button checkrating;
     Button generateotpactivity;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_teacher);
+        checkrating=(Button)findViewById(R.id.ratings);
         generateotpactivity=(Button)findViewById((R.id.take_review));
         logout=(Button)findViewById(R.id.logout_button);
         t=(EditText)findViewById(R.id.teacher_welcome);
@@ -46,6 +48,13 @@ public class WelcomeTeacher extends AppCompatActivity {
                 startActivity(welcomeintent);
                 finish();
 
+            }
+        });
+        checkrating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(com.example.loginactivity.WelcomeTeacher.this,com.example.loginactivity.CheckoutRatingActivity.class);
+                startActivity(intent);
             }
         });
     }
