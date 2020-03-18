@@ -15,7 +15,6 @@
     <string name="batch">Batch</string>
     <string name="lecturename">LectureName</string>
     <string name="year">Year</string>
-    <string name="semester">Semester</string>
     <string name="generate_code">Generate code</string>
     <string name="enrollment">Enrollment</string>
     <string name="pass">Password</string>
@@ -23,4 +22,8 @@
     <string name="login_student">Login</string>
     <string name="rate_lecture">Rate Lecture</string>
     <string name="logout_2">Logout</string>
+    <string name="lecture_name">Lecture Name</string>
+    <string name="batch_">Batch</string>
+    <string name="semester">Semester</string>
+    <string name="sem">Semester</string>
 </resources>

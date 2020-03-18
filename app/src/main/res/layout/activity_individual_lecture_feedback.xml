@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IndividualLectureFeedbackActivity">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="498dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="41dp"
+        android:text="           IndividualLecture FeedBack"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editText_lecturename"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-23dp" />
+
+    <EditText
+        android:id="@+id/editText_lecturename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="43dp"
+        android:ems="10"
+        android:hint="@string/lecture_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editText_batch"
+        app:layout_constraintStart_toStartOf="@+id/editText_batch"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/editText_batch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginBottom="37dp"
+        android:ems="10"
+        android:hint="@string/batch_"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/editText_semester"
+        app:layout_constraintStart_toStartOf="@+id/editText_semester"
+        app:layout_constraintTop_toBottomOf="@+id/editText_lecturename" />
+
+    <EditText
+        android:id="@+id/editText_semester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="51dp"
+        android:ems="10"
+        android:hint="@string/sem"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toTopOf="@+id/textView_date"
+        app:layout_constraintEnd_toEndOf="@+id/textView_date"
+        app:layout_constraintTop_toBottomOf="@+id/editText_batch" />
+
+    <TextView
+        android:id="@+id/textView_date"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="77dp"
+        android:text="Date"
+        app:layout_constraintBottom_toTopOf="@+id/button2_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_semester" />
+
+    <Button
+        android:id="@+id/button2_submit"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginLeft="118dp"
+        android:layout_marginBottom="86dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_date" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,6 +29,7 @@ import okhttp3.Response;
 public class CheckoutRatingActivity extends AppCompatActivity {
     OkHttpClient client;
     Button overallrating;
+    Button individualrating;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -36,6 +37,7 @@ public class CheckoutRatingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout_rating);
         overallrating = (Button) findViewById(R.id.button_overallrating);
+        individualrating=(Button)findViewById(R.id.button_individual_feedback);
         overallrating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,6 +99,13 @@ public class CheckoutRatingActivity extends AppCompatActivity {
 
                 });
 
+            }
+        });
+        individualrating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(com.example.loginactivity.CheckoutRatingActivity.this,com.example.loginactivity.IndividualLectureFeedbackActivity.class);
+                startActivity(intent);
             }
         });
     }

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".OverallRatingActivity"></activity>
+        <activity android:name=".IndividualLectureFeedbackActivity"></activity>
+        <activity android:name=".OverallRatingActivity" />
         <activity android:name=".CheckoutRatingActivity" />
         <activity android:name=".LectureFeedback" />
         <activity android:name=".WelcomeStudent" />
