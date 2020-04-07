@@ -1,60 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CheckoutRatingActivity">
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainMenuActivity">
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="33dp"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="serif"
-        android:text="         RATINGS"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_overallrating"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/titlemainscreen"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_horizontal"
+        android:text="Ratings"
+        android:textSize="36dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_lecturehistory"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="182dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_rounded"
+        android:text="Lecture History" />
 
     <Button
         android:id="@+id/button_overallrating"
-        android:layout_width="180dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
-        android:text="Overall Rating"
-        app:layout_constraintBottom_toTopOf="@+id/button_individual_feedback"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="182dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Overall Feedback" />
 
     <Button
         android:id="@+id/button_individual_feedback"
-        android:layout_width="174dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="39dp"
-        android:text="Individual lecture feedback"
-        app:layout_constraintBottom_toTopOf="@+id/button_record"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_overallrating" />
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="182dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        android:text="Individual lecture feeback" />
 
-    <Button
-        android:id="@+id/button_record"
-        android:layout_width="180dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="168dp"
-        android:text="Your Record"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_individual_feedback" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

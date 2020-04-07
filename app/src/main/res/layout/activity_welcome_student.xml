@@ -4,29 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".WelcomeStudent">
-    <EditText
+
+    <TextView
         android:id="@+id/student_welcome"
         android:layout_width="500dp"
         android:layout_height="80dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="                                      Welcome Student"/>
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
+        android:text="Welcome Student"
+        android:textSize="36sp" />
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/welcomestudteach"
+        />
+
     <Button
         android:id="@+id/button_post_rating"
-        android:layout_width="180dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="170dp"
-        android:text="@string/rate_lecture"/>
-    <Button
-        android:id="@+id/logout_button_student"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:layout_marginRight="-150dp"
-        android:text="@string/logout_2"
-        />
+        android:background="@drawable/button_rounded"
+
+        android:text="@string/rate_lecture" />
+
 </LinearLayout>

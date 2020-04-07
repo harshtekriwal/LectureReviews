@@ -4,30 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".StudentLoginActivity">
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login"
+        />
 
     <EditText
         android:id="@+id/edittext_enrollment_student"
-        android:layout_width="163dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="160dp"
-        android:inputType="numberDecimal"
-        android:hint="@string/enrollment" />
+        android:layout_width="236dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="100dp"
+        android:baselineAligned="false"
+        android:drawableStart="@drawable/username"
+        android:drawableLeft="@drawable/username"
+        android:gravity="center_horizontal"
+        android:hint="@string/enrollment"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/edittext_password_student"
-        android:inputType="textPassword"
-        android:layout_width="161dp"
-        android:layout_height="40dp"
+        android:layout_width="241dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="@string/pass" />
+        android:drawableStart="@drawable/password"
+        android:drawableLeft="@drawable/password"
+        android:gravity="center_horizontal"
+        android:hint="@string/pass"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button_login_student"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="137dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/login_student"/>
+        android:background="@drawable/button_rounded"
+        android:text="@string/login_student" />
 </LinearLayout>

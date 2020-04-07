@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        System.out.println("lol");
         username = (EditText) findViewById(R.id.edittext_username);
         password = (EditText) findViewById(R.id.edittext_password);
         login = (Button) findViewById(R.id.button_login);
-        register = (TextView) findViewById(R.id.textview_register);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 MediaType mediaType = MediaType.parse("application/json");
                 RequestBody body = RequestBody.create("{\n        \"teacherid\": \"" + uname + "\",\n        \"teacherpassword\":\"" + pass + "\"\n}", mediaType);
                 Request request = new Request.Builder()
-                        .url("http://10.0.2.2:8080/DetailsVerifiation/webapi/login/teacher")
+                        .url("http://192.168.1.28:8080/DetailsVerifiation/webapi/login/teacher")
                         .post(body)
                         .addHeader("content-type", "application/json")
                         .addHeader("cache-control", "no-cache")
@@ -114,14 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent registerIntent;
-                registerIntent = new Intent(com.example.loginactivity.MainActivity.this, com.example.loginactivity.registeractivity.class);
-                startActivity(registerIntent);
-            }
-        });
+
     }
 }
 

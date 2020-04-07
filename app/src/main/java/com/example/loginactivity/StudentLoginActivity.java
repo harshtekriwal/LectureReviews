@@ -45,6 +45,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         login.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("xD");
                 final String x = enrollment.getText().toString();
                 if (TextUtils.isEmpty(x)) {
                     enrollment.setError("Username cant be empty");
@@ -59,7 +60,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                 MediaType mediaType = MediaType.parse("application/json");
                 RequestBody body = RequestBody.create("{\n        \"studentid\": \"" + enrollment + "\",\n        \"studentpassword\":\"" + pass + "\"\n}", mediaType);
                 Request request = new Request.Builder()
-                        .url("http://10.0.2.2:8080/DetailsVerifiation/webapi/login/student")
+                        .url("http://192.168.1.28:8080/DetailsVerifiation/webapi/login/student")
                         .post(body)
                         .addHeader("content-type", "application/json")
                         .addHeader("cache-control", "no-cache")
@@ -68,6 +69,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                 client.newCall(request).enqueue(new Callback() {
                     @Override
                     public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                        System.out.println("what the hell");
                         e.printStackTrace();
                     }
                     @Override

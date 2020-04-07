@@ -4,43 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FDFCFC"
     android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/login" />
 
     <EditText
         android:id="@+id/edittext_username"
-        android:layout_width="163dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="160dp"
-        android:inputType="numberDecimal"
-        android:hint="@string/username" />
+        android:layout_width="239dp"
+        android:layout_height="67dp"
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="10dp"
+        android:drawableStart="@drawable/username"
+        android:drawableLeft="@drawable/username"
+        android:gravity="center_horizontal"
+        android:hint="@string/username"
+        android:inputType="numberDecimal" />
 
     <EditText
         android:id="@+id/edittext_password"
-        android:inputType="textPassword"
-        android:layout_width="161dp"
-        android:layout_height="40dp"
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/password" />
+        android:layout_marginRight="10dp"
+        android:baselineAligned="false"
+        android:drawableStart="@drawable/password"
+        android:drawableLeft="@drawable/password"
+        android:gravity="center_horizontal"
+        android:hint="@string/Password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/button_login"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="124dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
         android:text="@string/login" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="39dp"
-        android:text="@string/not_registered" />
-
-    <TextView
-        android:id="@+id/textview_register"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:paddingLeft="10dp"
-        android:text="@string/register"
-        android:textStyle="bold" />
 </LinearLayout>

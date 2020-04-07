@@ -12,10 +12,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.renderscript.Int2;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -35,9 +39,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class IndividualLectureFeedbackActivity extends AppCompatActivity {
-    EditText lecturename;
-    EditText batch;
-    EditText semester;
+
     TextView date;
     Button sub;
     SharedPreferences sharedPreferences;
@@ -45,6 +47,9 @@ public class IndividualLectureFeedbackActivity extends AppCompatActivity {
     int day,month,year;
     String d,m,y;
     OkHttpClient client;
+    Spinner subject;
+    Spinner semester;
+    Spinner batch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,37 +62,24 @@ public class IndividualLectureFeedbackActivity extends AppCompatActivity {
         d=String.format("%02d",day);
         m=String.format("%02d",month);
         y=Integer.toString(year);
-        lecturename=(EditText) findViewById(R.id.editText_lecturename);
-        batch=(EditText) findViewById(R.id.editText_batch);
-        semester=(EditText) findViewById(R.id.editText_semester);
         date=(TextView)findViewById(R.id.textView_date);
-
+        subject=(Spinner)findViewById(R.id.spinner_subject);
+        batch =(Spinner)findViewById(R.id.spinner_batch);
+        semester=(Spinner)findViewById(R.id.spinner_semester);
 
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                 String lname = lecturename.getText().toString();
-                if (TextUtils.isEmpty(lname)) {
-                    lecturename.setError("Lecturename cant be empty");
-                    return;
-                }
-                String b=batch.getText().toString();
-                if (TextUtils.isEmpty(b)) {
-                    batch.setError("Batch cant be empty");
-                    return;
-                }
-                String sem=semester.getText().toString();
-                if (TextUtils.isEmpty(sem)) {
-                    semester.setError("Semester cant be empty");
-                    return;
-                }
+                String lec_name=subject.getItemAtPosition(subject.getSelectedItemPosition()).toString();
+                String batch_b=batch.getItemAtPosition(batch.getSelectedItemPosition()).toString();
+                String sem=semester.getItemAtPosition(semester.getSelectedItemPosition()).toString();
                 sharedPreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);
                 int teacherid = sharedPreferences.getInt("id", 0);
                 client = new OkHttpClient();
                 MediaType mediaType = MediaType.parse("application/json");
-                RequestBody body = RequestBody.create( "{\n\t\t\"teacherid\":"+teacherid+",\n\t\t\"semester\":"+Integer.parseInt(sem)+",\n\t\t\"day\":\""+d+"\",\n\t\t\"month\":\""+m+"\",\n\t\t\"year\":\""+y+"\",\n\t\t\"batch\":\""+b+"\",\n\t\t\"lecturename\":\""+lname+"\"\n}\t",mediaType);
+                RequestBody body = RequestBody.create( "{\n\t\t\"teacherid\":"+teacherid+",\n\t\t\"semester\":"+Integer.parseInt(sem)+",\n\t\t\"day\":\""+d+"\",\n\t\t\"month\":\""+m+"\",\n\t\t\"year\":\""+y+"\",\n\t\t\"batch\":\""+batch_b+"\",\n\t\t\"lecturename\":\""+lec_name+"\"\n}\t",mediaType);
                 Request request = new Request.Builder()
-                        .url("http://10.0.2.2:8080/DetailsVerifiation/webapi/postindividualrating/submit")
+                        .url("http://192.168.1.8:8080/DetailsVerifiation/webapi/postindividualrating/submit")
                         .post(body)
                         .addHeader("content-type", "application/json")
                         .addHeader("cache-control", "no-cache")
@@ -158,7 +150,31 @@ public class IndividualLectureFeedbackActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+    }
+    public boolean onCreateOptionsMenu(Menu menu){
 
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.mainmenu,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.item_aboutapp){
+            Intent welcomeintent;
+            welcomeintent = new Intent(com.example.loginactivity.IndividualLectureFeedbackActivity.this,com.example.loginactivity.abouttheapp.class);
+            startActivity(welcomeintent);
+        }
+        if(item.getItemId()==R.id.item_logout){
+            SharedPreferences sharedpreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.apply();
+            Intent welcomeintent;
+            welcomeintent = new Intent(com.example.loginactivity.IndividualLectureFeedbackActivity.this,com.example.loginactivity.MainMenuActivity.class);
+            welcomeintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(welcomeintent);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }

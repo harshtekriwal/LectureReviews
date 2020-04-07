@@ -11,6 +11,9 @@ import android.media.Rating;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RatingBar;
@@ -68,6 +71,32 @@ public class OverallRatingActivity extends AppCompatActivity {
                 int x=ratings.getNumberofstudents();
                 System.out.println(x);
                 numberofstudents.setText(Integer.toString(x));
+
+    }
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.mainmenu,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.item_aboutapp){
+            Intent welcomeintent;
+            welcomeintent = new Intent(com.example.loginactivity.OverallRatingActivity.this,com.example.loginactivity.abouttheapp.class);
+            startActivity(welcomeintent);
+        }
+        if(item.getItemId()==R.id.item_logout){
+            SharedPreferences sharedpreferences = getSharedPreferences("mypref", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.apply();
+            Intent welcomeintent;
+            welcomeintent = new Intent(com.example.loginactivity.OverallRatingActivity.this,com.example.loginactivity.MainMenuActivity.class);
+            welcomeintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(welcomeintent);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }

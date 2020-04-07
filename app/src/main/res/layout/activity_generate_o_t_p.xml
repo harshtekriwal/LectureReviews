@@ -1,57 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F6EBEB"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".GenerateOTP">
 
-    <EditText
+    <TextView
         android:id="@+id/edit_text_lecturecode"
-        android:layout_width="500dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="400dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
         android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
         android:inputType="textPersonName"
-        android:text="                                  Generate Lecture Code" />
+        android:text=" Lecture Code"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_text_lecturename"
-        android:layout_width="163dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="120dp"
-        android:inputType="text"
-        android:hint="@string/lecturename"/>
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:entries="@array/subjects"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_lecturecode" />
 
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:entries="@array/semesters"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/button_batches" />
 
-    <EditText
-        android:id="@+id/edit_text_batch"
-        android:inputType="text"
-        android:layout_width="161dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/batch" />
-    <EditText
-        android:id="@+id/edit_text_Semester"
-        android:inputType="numberDecimal"
-        android:layout_width="161dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:hint="@string/semester" />
     <Button
         android:id="@+id/button_OTP"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/generate_code" />
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="122dp"
+        android:layout_marginRight="122dp"
+        android:background="@drawable/button_rounded"
+        android:text="@string/generate_code"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3" />
 
     <TextView
-        android:id="@+id/text_view_otp"
-        android:layout_width="200dp"
-        android:layout_height="76dp"
-        android:layout_marginTop="50dp"
-        android:text="" />
+        android:id="@+id/textView10"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:text="Lecture Name"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_lecturecode" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="15dp"
+        android:text="Semester"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/spinner3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_selectbatch" />
+
+    <Button
+        android:id="@+id/button_selectbatch"
+        android:layout_width="155dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="Select Batch"
+        app:layout_constraintEnd_toStartOf="@+id/button_batches"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/button_batches"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="No Batches Selected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_selectbatch"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

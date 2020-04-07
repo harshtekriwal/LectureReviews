@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -90,7 +93,7 @@ public class LectureFeedback extends AppCompatActivity {
                 MediaType mediaType = MediaType.parse("application/json");
                 RequestBody body = RequestBody.create("{\n\t\t\"lectureid\":"+feedbackDetails.getLectureid()+",\n\t\t\"studentroll\":"+feedbackDetails.getStudentroll()+",\n\t\t\"knowledge\":"+feedbackDetails.getKnowledge()+",\n\t\t\"communication\":"+feedbackDetails.getCommunication()+",\n\t\t\"clarity\":"+feedbackDetails.getClarity()+"\n}\t",mediaType);
                 Request request = new Request.Builder()
-                        .url("http://10.0.2.2:8080/DetailsVerifiation/webapi/postfeedback/submit")
+                        .url("http://192.168.1.28:8080/DetailsVerifiation/webapi/postfeedback/submit")
                         .post(body)
                         .addHeader("content-type", "application/json")
                         .addHeader("cache-control", "no-cache")
@@ -185,4 +188,32 @@ public class LectureFeedback extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.mainmenu,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(item.getItemId()==R.id.item_aboutapp){
+            Intent welcomeintent;
+            welcomeintent = new Intent(com.example.loginactivity.LectureFeedback.this,com.example.loginactivity.abouttheapp.class);
+            startActivity(welcomeintent);
+        }
+        if(item.getItemId()==R.id.item_logout){
+            SharedPreferences sharedpreferences = getSharedPreferences("studentdetails", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.clear();
+            editor.apply();
+            Intent welcomeintent;
+            welcomeintent = new Intent(com.example.loginactivity.LectureFeedback.this,com.example.loginactivity.MainMenuActivity.class);
+            welcomeintent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(welcomeintent);
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
 }
+

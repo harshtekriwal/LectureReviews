@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".IndividualLectureFeedbackActivity"></activity>
+        <activity android:name=".abouttheapp"></activity>
+        <activity android:name=".LectureHistoryActivity" />
+        <activity android:name=".IndividualLectureFeedbackActivity" />
         <activity android:name=".OverallRatingActivity" />
         <activity android:name=".CheckoutRatingActivity" />
         <activity android:name=".LectureFeedback" />
@@ -21,7 +23,6 @@
         <activity android:name=".GenerateOTP" />
         <activity android:name=".MainActivity" />
         <activity android:name=".WelcomeTeacher" />
-        <activity android:name=".registeractivity" />
         <activity android:name=".MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

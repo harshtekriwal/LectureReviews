@@ -1,6 +1,37 @@
 <resources>
-    <string name="app_name">loginactivity</string>
-    <string name="username">username</string>
+    <string name="app_name">LectureFeedback</string>
+    <string-array name="subjects">
+        <item>Maths</item>
+        <item>Physics</item>
+        <item>CSE</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="semesters">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+
+    </string-array>
+    <string-array name="batches">
+        <item>B1</item>
+        <item>B2</item>
+        <item>B3</item>
+        <item>B4</item>
+        <item>B5</item>
+        <item>B6</item>
+        <item>B7</item>
+        <item>B8</item>
+        <item>B9</item>
+        <item>B10</item>
+        <item>B11</item>
+    </string-array>
+    <string name="subjects">Subjects</string>
+    <string name="username">ID</string>
     <string name="password">password</string>
     <string name="login">login</string>
     <string name="not_registered">not_registered</string>
@@ -26,4 +57,16 @@
     <string name="batch_">Batch</string>
     <string name="semester">Semester</string>
     <string name="sem">Semester</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="ID">ID</string>
+    <string name="Password">Password</string>
+    <string name="lecture_details">Lecture Details</string>
 </resources>
